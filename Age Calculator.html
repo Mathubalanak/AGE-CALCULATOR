@@ -1,0 +1,99 @@
+<html>
+<title>Calculate Your Age&#128526;</title>
+<style>
+    body {
+        background-image: url(https://usagif.com/wp-content/uploads/gif/outerspace-18.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .full {
+        margin: 140px auto auto 415px;
+        display: inline-block;
+        padding: 3%;
+        border-radius: 10px;
+        background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg);
+    }
+
+    h1 {
+        color: #7cdffb;
+        margin-top: 4px;
+        font-size: 50px;
+    }
+
+    p {
+        color: #f7d5df;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+
+    input {
+        font-size: 25px;
+        margin: auto auto auto 125px;
+        border-radius: 5px;
+    }
+
+    #one {
+        color: black;
+
+        border-radius: 10px;
+        font-size: 20px;
+        background-color: red;
+    }
+
+    #two {
+        color: rgb(19, 233, 12);
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    button {
+        color: #3234c5;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #4bcfe0;
+        border-radius: 12px;
+        padding: 5px;
+        margin: 20px auto auto 170px;
+    }
+</style>
+<script>
+    function ageCalc() {
+        var values = document.getElementById("dob").value;
+        var dob = new Date(values);
+        if (values == '') {
+            document.getElementById("one").innerHTML = "&#9888;Select Date Of Birth..!! ";
+            return false;
+
+        }
+        else {
+
+            var month = Date.now() - dob.getTime();
+
+            var age = new Date(month);
+
+            var year = age.getUTCFullYear();
+
+            var age = Math.abs(year - 1970);
+
+            return document.getElementById("two").innerHTML = "You are " + age + " years old&#128513;";
+        }
+    }
+</script>
+
+<body>
+
+    <div class="full">
+        <h1>AGE CALCULATOR</h1>
+
+        <p>Select Birth Date&#128197;<br> </p><input type="date" id="dob">
+        <span id="one"> </span> <br>
+
+        <button type="submit" onclick="ageCalc()"> Calculate&#128525; </button> <br>
+        <h3 id="two"></h3>
+    </div>
+</body>
+
+</html>
